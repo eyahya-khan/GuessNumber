@@ -18,7 +18,7 @@ namespace NumberGuesser
 
                 int guess = 0;
 
-                Console.WriteLine("Guess a number between 1 and 10");
+                PrintColorMessage(ConsoleColor.Magenta, "Guess a number between 1 and 10");
 
                 while (guess != correctNumber)
                 {
@@ -26,7 +26,7 @@ namespace NumberGuesser
 
                     if (!int.TryParse(input, out guess))
                     {
-                        PrintColorMessage(ConsoleColor.Red, "Please use a number");
+                        PrintColorMessage(ConsoleColor.Red, "Please enter a number");
                         continue;
                     }
 
@@ -70,6 +70,7 @@ namespace NumberGuesser
             Console.WriteLine("{0}: Version {1} by {2}", appName, appVersion, appAuthor);
 
             Console.ResetColor();
+            Console.WriteLine("-------------------------------------------");
         }
 
         static void GreetUser()
@@ -78,7 +79,7 @@ namespace NumberGuesser
 
             string? inputName = Console.ReadLine();
 
-            Console.WriteLine("Hello {0}, let's play a game...", inputName);
+            Console.WriteLine("\nHello {0}, let's play a game...", inputName);
         }
 
         static void PrintColorMessage(ConsoleColor color, string message)
